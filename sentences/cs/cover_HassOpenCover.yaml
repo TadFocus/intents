@@ -1,5 +1,21 @@
 language: cs
 intents:
-  HassOpenCover:
+  HassOpenCover:    
     data:
-    - sentences: []
+      - sentences:
+          - "Otevři <name>"
+          - "Otevři <name> <area>"
+      - sentences:
+          - "Otevři dveře (garáže | od garáže)"
+          - "Dveře (garáže | od garáže) otevři"
+        slots:
+          device_class: "garage_door"
+      - sentences:
+          - "Rolety v <area> otevři"
+          - "Otevři rolety v <area>"
+          - "Otevři [všechny] rolety v <area>"
+        slots:
+          device_class:
+            - "blind"
+            - "curtain"
+            - "shutter"
